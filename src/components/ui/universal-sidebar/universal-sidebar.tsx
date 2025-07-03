@@ -257,7 +257,7 @@ export function UniversalSidebar({
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-black/50 z-40"
+              className="fixed inset-0 top-16 bg-black/50 z-[60]"
               onClick={onClose}
             />
 
@@ -269,7 +269,7 @@ export function UniversalSidebar({
               exit="closed"
               transition={{ type: "spring", stiffness: 300, damping: 30 }}
               className={cn(
-                "fixed left-0 top-0 h-full w-80 bg-background/95 backdrop-blur-lg border-r z-50 overflow-hidden",
+                "fixed left-0 top-16 h-[calc(100vh-4rem)] w-80 bg-background/95 backdrop-blur-lg border-r z-[70] overflow-hidden",
                 className
               )}
             >
@@ -310,7 +310,7 @@ export function SidebarToggle({ onClick, isOpen = false, className }: SidebarTog
       variant="ghost"
       size="icon"
       onClick={onClick}
-      className={cn("relative z-50", className)}
+      className={cn("relative z-[80]", className)}
     >
       <motion.div
         animate={{ rotate: isOpen ? 180 : 0 }}

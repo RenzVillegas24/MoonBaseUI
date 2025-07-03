@@ -16,61 +16,18 @@ import {
 } from "@/components/ui";
 import { Mail, Phone, MapPin, Calendar, User, Award, Briefcase, GraduationCap, Code, Palette, Wrench, Globe, Facebook, Instagram, Github, Moon, Sun } from "lucide-react";
 
-function ThemeToggle() {
-  const { mode, toggleMode } = useTheme();
-
-  return (
-    <Button
-      variant="outline"
-      size="icon"
-      onClick={toggleMode}
-      className="fixed top-4 right-4 z-50"
-    >
-      {mode === "light" ? (
-        <Moon className="h-4 w-4" />
-      ) : mode === "dark" ? (
-        <Palette className="h-4 w-4" />
-      ) : (
-        <Sun className="h-4 w-4" />
-      )}
-    </Button>
-  );
-}
-
 function ProfileComponent() {
   return (
-    <div className="min-h-screen bg-background">
-      <ThemeToggle />
-      
-      {/* Navigation */}
-      <nav className="border-b">
-        <div className="content-max-width content-padding py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">M</span>
-              </div>
-              <span className="font-semibold text-lg">MoonBase UI</span>
-            </div>
-            <div className="flex items-center space-x-6">
-              <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors">Home</Link>
-              <Link href="/components" className="text-muted-foreground hover:text-foreground transition-colors">Components</Link>
-              <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">About</Link>
-              <Link href="/about/me" className="text-foreground font-medium">Developer</Link>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-        <div className="content-max-width content-padding py-10">
-          {/* Header Card */}
-          <Card className="mb-8">
-            <CardHeader className="text-center pb-6">
-              <div className="mx-auto w-64 h-64 bg-gradient-to-br from-primary/20 to-primary/40 rounded-full flex items-center justify-center mb-4">
-                <Image
-                  src="https://nhmsopkpgkdphujpcnez.supabase.co/storage/v1/object/public/images/about/me/profile.jpg"
-                  alt="Renz Justine L. Villegas"
-                  width={256}
+    <div className="min-h-[calc(100vh-4rem)] bg-background">
+      <div className="container mx-auto px-4 py-10">
+        {/* Header Card */}
+        <Card className="mb-8">
+          <CardHeader className="text-center pb-6">
+            <div className="mx-auto w-64 h-64 bg-gradient-to-br from-primary/20 to-primary/40 rounded-full flex items-center justify-center mb-4">
+              <Image
+                src="https://nhmsopkpgkdphujpcnez.supabase.co/storage/v1/object/public/images/about/me/profile.jpg"
+                alt="Renz Justine L. Villegas"
+                width={256}
                 height={256}
                 className="rounded-full object-cover"
               />
@@ -89,7 +46,7 @@ function ProfileComponent() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column */}
-          <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-10 lg:self-start">
+          <div className="lg:col-span-1 space-y-6 lg:sticky lg:top-20 lg:self-start">
             {/* Personal Information */}
             <Card>
               <CardHeader>
@@ -461,9 +418,5 @@ function ProfileComponent() {
 }
 
 export default function MePage() {
-  return (
-    <ThemeProvider defaultMode="system" defaultTheme="default">
-      <ProfileComponent />
-    </ThemeProvider>
-  );
+  return <ProfileComponent />;
 }

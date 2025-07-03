@@ -38,26 +38,7 @@ function ThemeToggle() {
 function AboutPage() {
   return (
     <div className="min-h-screen bg-background">
-      <ThemeToggle />
-      
-      {/* Navigation */}
-      <nav className="border-b">
-        <div className="content-max-width content-padding py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">M</span>
-              </div>
-              <span className="font-semibold text-lg">MoonBase UI</span>
-            </div>
-            <div className="flex items-center space-x-6">
-              <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors">Home</Link>
-              <Link href="/components" className="text-muted-foreground hover:text-foreground transition-colors">Components</Link>
-              <Link href="/about" className="text-foreground font-medium">About</Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+
 
       {/* Hero Section */}
       <div className="relative overflow-hidden">

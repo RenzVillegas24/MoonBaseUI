@@ -14,6 +14,9 @@ export * from "./switch";
 export * from "./tabs";
 export * from "./textarea";
 
+// Demo Components
+export * from "./color-palette-demo";
+
 // Theme Provider
 export { ThemeProvider, useTheme } from "@/hooks/use-theme";
 
